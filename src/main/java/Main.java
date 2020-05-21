@@ -1,17 +1,25 @@
+import com.mpatric.mp3agic.ID3v2;
+import com.mpatric.mp3agic.InvalidDataException;
+import com.mpatric.mp3agic.Mp3File;
+import com.mpatric.mp3agic.UnsupportedTagException;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InvalidDataException, UnsupportedTagException {
         Path mp3Directory = getDirectory(args);
 
         FileManager fileManager = new FileManager(mp3Directory);
         fileManager.fillFilePaths();
         fileManager.printManager();
-
+        fileManager.convertPathsToSongs();
+        fileManager.printSongs();
     }
 
     public static Path getDirectory(String[] args) {
