@@ -4,7 +4,6 @@ import com.mpatric.mp3agic.Mp3File;
 import com.mpatric.mp3agic.UnsupportedTagException;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -74,4 +73,7 @@ public class FileManager {
         return filePaths;
     }
 
+    public List<Song> getSongs() {
+        return songs;
+    }
 }

@@ -12,14 +12,17 @@ import java.util.stream.Collectors;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, InvalidDataException, UnsupportedTagException {
+    public static void main(String[] args) throws IOException {
         Path mp3Directory = getDirectory(args);
 
         FileManager fileManager = new FileManager(mp3Directory);
         fileManager.fillFilePaths();
-        fileManager.printManager();
+        //fileManager.printManager();
         fileManager.convertPathsToSongs();
         fileManager.printSongs();
+        Database database = new Database();
+        database.clearTable();
+        database.setUp(fileManager.getSongs());
     }
 
     public static Path getDirectory(String[] args) {
