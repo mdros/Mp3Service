@@ -2,6 +2,7 @@ import com.mpatric.mp3agic.ID3v2;
 import com.mpatric.mp3agic.InvalidDataException;
 import com.mpatric.mp3agic.Mp3File;
 import com.mpatric.mp3agic.UnsupportedTagException;
+import server.Server;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -12,7 +13,7 @@ import java.util.stream.Collectors;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         Path mp3Directory = getDirectory(args);
 
         FileManager fileManager = new FileManager(mp3Directory);
@@ -23,6 +24,9 @@ public class Main {
         Database database = new Database();
         database.clearTable();
         database.setUp(fileManager.getSongs());
+        Server server = new Server(8080);
+        server.setup();
+        server.start();
     }
 
     public static Path getDirectory(String[] args) {
@@ -33,7 +37,7 @@ public class Main {
         String directory = /*args[0]*/ "C:/Users/micha/Desktop/Muzyka";
         Path mp3Directory = Paths.get(directory);
 
-        if (! Files.exists(mp3Directory)) {
+        if (!Files.exists(mp3Directory)) {
             throw new IllegalArgumentException("The specified directory does not exist : " + mp3Directory);
         }
 

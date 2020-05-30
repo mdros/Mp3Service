@@ -11,7 +11,7 @@ public class Database {
     private static final String USER = "postgres";
     private static final String PASS = "ReedEs123";
 
-    Database() {
+    public Database() {
         conn = null;
         stmt = null;
     }
