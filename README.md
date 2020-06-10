@@ -41,5 +41,3 @@ For the program to work you will need PostgreSQL and Java.
 * Gradle
 
 * PostgreSQL
-
-* 
