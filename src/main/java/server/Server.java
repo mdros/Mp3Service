@@ -23,7 +23,7 @@ public class Server {
 
     public void start() throws Exception {
         server.start();
-        if(Desktop.isDesktopSupported()) {
+        if (Desktop.isDesktopSupported()) {
             Desktop.getDesktop().browse(new URI("http://localhost:8080/songs"));
         }
     }
