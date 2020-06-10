@@ -12,7 +12,7 @@ public class Database {
     private static final String DB_URL = "jdbc:postgresql://localhost:5432/songs";
 
     private static final String USER = "postgres";
-    private static final String PASS = "ReedEs123";
+    private static final String PASS = "postgres";
 
     public Database() {
         conn = null;
