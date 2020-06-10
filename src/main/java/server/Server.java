@@ -28,8 +28,4 @@ public class Server {
         }
     }
 
-
-    public org.eclipse.jetty.server.Server getServer() {
-        return server;
-    }
 }

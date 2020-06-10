@@ -14,24 +14,21 @@ public class Main {
 
         FileManager fileManager = new FileManager(mp3Directory);
         fileManager.fillFilePaths();
-        //fileManager.printManager();
         fileManager.convertPathsToSongs();
         fileManager.printSongs();
+
         Database database = new Database();
         database.clearTable();
         database.setUp(fileManager.getSongs());
+
         Server server = new Server(8080);
         server.setup();
         server.start();
     }
 
-    public static Path getDirectory(/*String[] args*/) throws URISyntaxException {
-        /*if (args.length != 1) {
-            throw new IllegalArgumentException("You need to specify a valid mp3 directory");
-        }*/
-
-        //String directory = /*args[0]*/ "C:/Users/micha/Desktop/Muzyka";
-        Path mp3Directory = Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
+    public static Path getDirectory() throws URISyntaxException {
+        String directory =  "C:/Users/micha/Desktop/Muzyka";
+        Path mp3Directory = Paths.get(directory); //Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI());
 
         if (!Files.exists(mp3Directory)) {
             throw new IllegalArgumentException("The specified directory does not exist : " + mp3Directory);

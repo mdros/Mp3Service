@@ -1,5 +1,6 @@
 package files;
 
+
 import java.sql.*;
 import java.util.List;
 
@@ -44,7 +45,7 @@ public class Database {
                 sql = "INSERT INTO SONGS (ARTIST, YEAR, ALBUM, TITLE) "
                         + "VALUES (\'" + song.getArtist() + "\',\'" + song.getYear() + "\',\'" + song.getAlbum() + "\',\'" + song.getTitle() + "\');";
                 stmt.executeUpdate(sql);
-                System.out.println("Song added.");
+                System.out.println("files.Song added.");
             }
             stmt.close();
 
