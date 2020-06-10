@@ -34,4 +34,12 @@ For the program to work you will need PostgreSQL and Java.
    **_http://localhost:8080/songs_**
 
 
+#### Technologies used.
 
+* Java, Servlets
+
+* Gradle
+
+* PostgreSQL
+
+* 
