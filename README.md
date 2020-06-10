@@ -10,15 +10,14 @@ This simple program parses songs from a folder, puts them in a database and show
 
 For the program to work you will need PostgreSQL and Java.
 
-#### 
 
-#### Database setup.
+#### Database setup
 
 [Download the latest version of PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) and install it. Do not change the port. Start PGAdmin 4. Here, create a database called **'songs'**. The username and password you entered in PGAdmin will be needed to connect to the database later.
 
 
 
-#### Installation and usage.
+#### Installation and usage
 
 1. Download the .jar and .yml files from the latest release. 
 
@@ -32,9 +31,11 @@ For the program to work you will need PostgreSQL and Java.
 
    and press ENTER. You should see some output and a website will pop up with a list of your songs. If the website doesn't show up, check it manually under:
    **_http://localhost:8080/songs_**
+   
+ 5. To close the program, press **CTRL + C** on your keyboard while on Command Line window.
 
 
-#### Technologies used.
+#### Technologies used
 
 * Java, Servlets
 
