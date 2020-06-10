@@ -1,8 +1,6 @@
 package files;
 
-
 import org.yaml.snakeyaml.Yaml;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,7 +9,6 @@ import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
 public class Database {
     private Connection conn;
