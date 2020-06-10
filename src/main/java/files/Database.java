@@ -29,12 +29,7 @@ public class Database {
 
             System.out.println("Creating table...");
             stmt = conn.createStatement();
-            String sql = "CREATE TABLE IF NOT EXISTS SONGS" +
-                "(ID            SERIAL PRIMARY KEY      NOT NULL," +
-                " ARTIST        varchar(255)            NOT NULL, " +
-                " YEAR          varchar(255)            NOT NULL, " +
-                " ALBUM         varchar(255)            NOT NULL, " +
-                " TITLE         varchar(255)            NOT NULL)";
+            String sql = createTableStmt();
             stmt.executeUpdate(sql);
             stmt.close();
             System.out.println("Table created successfully.");
@@ -45,7 +40,7 @@ public class Database {
                 sql = "INSERT INTO SONGS (ARTIST, YEAR, ALBUM, TITLE) "
                         + "VALUES (\'" + song.getArtist() + "\',\'" + song.getYear() + "\',\'" + song.getAlbum() + "\',\'" + song.getTitle() + "\');";
                 stmt.executeUpdate(sql);
-                System.out.println("files.Song added.");
+                System.out.println("Song added.");
             }
             stmt.close();
 
@@ -53,6 +48,15 @@ public class Database {
             } catch (SQLException | ClassNotFoundException e) {
                 e.printStackTrace();
         }
+    }
+
+    private String createTableStmt() {
+        return "CREATE TABLE IF NOT EXISTS SONGS" +
+                "(ID            SERIAL PRIMARY KEY      NOT NULL," +
+                " ARTIST        varchar(255)            NOT NULL, " +
+                " YEAR          varchar(255)            NOT NULL, " +
+                " ALBUM         varchar(255)            NOT NULL, " +
+                " TITLE         varchar(255)            NOT NULL)";
     }
 
     public void clearTable() {
