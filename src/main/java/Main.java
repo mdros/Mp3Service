@@ -2,10 +2,10 @@ import files.Database;
 import files.FileManager;
 import server.Server;
 
+import java.io.File;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class Main {
 
@@ -27,14 +27,15 @@ public class Main {
     }
 
     public static Path getDirectory() throws URISyntaxException {
-        String directory =  "C:/Users/micha/Desktop/Muzyka";
-        Path mp3Directory = Paths.get(directory); //Paths.get(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+        File jarDirectory = new File(Main.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+        File parentDirectory = jarDirectory.getParentFile();
+        Path mp3Path = parentDirectory.toPath();
 
-        if (!Files.exists(mp3Directory)) {
-            throw new IllegalArgumentException("The specified directory does not exist : " + mp3Directory);
+        if (!Files.exists(mp3Path)) {
+            throw new IllegalArgumentException("The specified directory does not exist : " + mp3Path);
         }
 
-        return mp3Directory;
+        return mp3Path;
     }
     
 }
