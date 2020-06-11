@@ -1,6 +1,8 @@
-import files.Database;
-import files.FileManager;
-import server.Server;
+package pl.michaldros;
+
+import pl.michaldros.server.Server;
+import pl.michaldros.files.Database;
+import pl.michaldros.files.FileManager;
 
 import java.io.File;
 import java.net.URISyntaxException;

@@ -1,4 +1,4 @@
-package files;
+package pl.michaldros.files;
 
 public class Song {
     private final String artist;

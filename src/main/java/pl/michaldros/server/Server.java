@@ -1,4 +1,4 @@
-package server;
+package pl.michaldros.server;
 
 import org.eclipse.jetty.servlet.ServletContextHandler;
 

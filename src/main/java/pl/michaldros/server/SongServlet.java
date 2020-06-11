@@ -1,6 +1,6 @@
-package server;
+package pl.michaldros.server;
 
-import files.Database;
+import pl.michaldros.files.Database;
 import org.yaml.snakeyaml.Yaml;
 
 import javax.servlet.http.HttpServlet;

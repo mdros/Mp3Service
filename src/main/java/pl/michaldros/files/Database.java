@@ -1,4 +1,4 @@
-package files;
+package pl.michaldros.files;
 
 import org.yaml.snakeyaml.Yaml;
 import java.io.File;
